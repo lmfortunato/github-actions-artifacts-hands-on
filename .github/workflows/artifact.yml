@@ -24,9 +24,8 @@ jobs:
     steps:
     - name: download artifact
       uses: actions/download-artifact@v2
-      id: download-artifact
       with:
         name: hello-artifact
+        path: ./artifacts
     - name: display content of the file
-      if: steps.dowload-artifact.outcome == 'success'
       run: cat ./artifacts/hello.txt
